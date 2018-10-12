@@ -73,11 +73,11 @@ export class MealAddComponent extends MealAddBaseComponent implements OnInit {
         title: 'Meal Tracked',
         message: 'Remember, stop before nightfall.',
         okButtonText: 'Onward'
-    };
+      };
 
-    alert(options).then(() => {
-      this.router.navigate(['/home']);
-    });
+      alert(options).then(() => {
+        this.router.navigate(['/home']);
+      });
     }
   }
 
