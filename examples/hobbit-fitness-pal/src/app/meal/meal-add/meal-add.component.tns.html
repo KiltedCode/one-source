@@ -1,8 +1,11 @@
 <DockLayout>
-    <Button text="Track"
-        class="track-btn"
-        dock="bottom"
-        (tap)="trackMealTNS(customFood.text)"></Button>
+    <GridLayout dock="bottom" rows="auto" columns="*">
+        <Button text="Track"
+                class="track-btn"
+                horizontalAlignment="right"
+                (tap)="trackMealTNS(customFood.text)"
+                width="150"></Button>
+    </GridLayout>
     <StackLayout class="p-20"
             dock="top">
         <Label [text]="mealName" 

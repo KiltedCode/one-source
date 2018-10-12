@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FoodService } from '../food.service';
 import { MealService } from '../meal.service';
+import { MealAddBaseComponent } from './meal-add.base.component';
 
 import { alert } from 'tns-core-modules/ui/dialogs';
 
@@ -10,7 +11,7 @@ import { alert } from 'tns-core-modules/ui/dialogs';
   templateUrl: './meal-add.component.html',
   styleUrls: ['./meal-add.component.scss']
 })
-export class MealAddComponent implements OnInit {
+export class MealAddComponent extends MealAddBaseComponent implements OnInit {
   customPlaceholder: string;
   foods: any[];
   foodPickerList: string[];
@@ -19,11 +20,13 @@ export class MealAddComponent implements OnInit {
   showSuccess: boolean;
 
   constructor(
-    private foodService: FoodService,
-    private mealService: MealService,
-    private route: ActivatedRoute,
-    private router: Router
-  ) { }
+    protected foodService: FoodService,
+    protected mealService: MealService,
+    protected route: ActivatedRoute,
+    protected router: Router
+  ) {
+    super(foodService, mealService, route, router);
+  }
 
   ngOnInit() {
     this.selectedFood = '';
@@ -54,21 +57,6 @@ export class MealAddComponent implements OnInit {
       );
   }
 
-  getMealName(id: string): void {
-    this.mealName = this.mealService.getMealName(id);
-  }
-
-  private getPlaceholder(name: string): string {
-    return name === 'CUSTOM' ?
-          'Enter custom food name' :
-          'select custom to enter';
-  }
-
-  selectFood(name: string): void {
-    this.selectedFood = name;
-    this.customPlaceholder  = this.getPlaceholder(name);
-  }
-
   selectFoodTNS(pick: any): void {
     const pickedIndex = pick.object.selectedIndex;
     let picked = '';
@@ -76,15 +64,6 @@ export class MealAddComponent implements OnInit {
       picked = this.foodPickerList[pickedIndex];
     }
     this.selectFood(picked);
-  }
-
-  trackMeal(customFood): void {
-    if (this.selectedFood === '' || (this.selectedFood === 'CUSTOM' && customFood.length === 0)) {
-      // error
-      return;
-    }
-
-    this.showSuccess = true;
   }
 
   trackMealTNS(customFood): void {

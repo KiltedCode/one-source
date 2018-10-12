@@ -1,10 +1,12 @@
 <DockLayout>
-    <Button text="+" 
-        [nsRouterLink]="['/meal-list']" 
-        dock="bottom"
-        class="add-link-btn"
-        height="45"
-        width="45"></Button>
+    <GridLayout dock="bottom" rows="auto" columns="*">
+        <Button text="+" 
+            [nsRouterLink]="['/meal-list']"
+            class="add-link-btn"
+            horizontalAlignment="right"
+            height="45"
+            width="45"></Button>
+    </GridLayout>
     <StackLayout  class="p-20 text-center"
         dock="top">
         <Label text="HobbitFitnessPal"
@@ -17,8 +19,8 @@
             <Label *ngFor="let ov of overview"
                     [ngClass]="{'tracked': ov.tracked}"
                     class="overview-box"
-                    height="100"
-                    width="100"></Label>
+                    height="90"
+                    width="90"></Label>
         </WrapLayout>
     </StackLayout>
 </DockLayout>
