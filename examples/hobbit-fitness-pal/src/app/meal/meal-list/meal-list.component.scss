@@ -1,0 +1,22 @@
+@import '../../../app-variables';
+
+.meal-list {
+    margin: 25px;
+}
+
+a.meal-box {
+    border: 1px solid lightgray;
+    box-sizing: border-box;
+    color: black;
+    display: block;
+    font-size: 20px;
+    margin: 25px 0;
+    padding: 15px 25px;
+    text-decoration: none;
+    width: 100%;
+
+    &.tracked {
+        background-color: $hobbit-green;
+        color: white;
+    }
+}

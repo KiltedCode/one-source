@@ -1,0 +1,35 @@
+@import '../../app-variables';
+
+.add-link-btn {
+    background-color: $hobbit-green;
+    border-radius: 45px;
+    box-sizing: border-box;
+    bottom: 20px;
+    color: white;
+    display: block;
+    font-size: 30px;
+    font-weight: bold;
+    height: 45px;
+    padding-top: 2px;
+    position: fixed;
+    right: 20px;
+    text-align: center;
+    text-decoration: none;
+    width: 45px;
+}
+
+.overview-preview {
+    margin: 25px auto;
+    text-align: center;
+}
+
+.overview-box {
+    border: 1px solid lightgray;
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+
+    &.tracked {
+        background-color: $hobbit-green;
+    }
+}

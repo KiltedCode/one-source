@@ -1,0 +1,45 @@
+<h1>
+  {{mealName}}
+</h1>
+<p class="instructions">
+  Track your meal:
+</p>
+<div>
+  <select class="food-list"
+      (change)="selectFood($event.target.value)">
+    <option value="-1">
+      Select a food:
+    </option>
+    <option *ngFor="let food of foods"
+        [value]="food.name">
+      {{food.name}}
+    </option>
+    <option value="CUSTOM">
+      Custom
+    </option>
+  </select>
+
+  <input #customFood
+        type="text"
+        class="food-name"
+        [placeholder]="customPlaceholder"
+        [disabled]="selectedFood!='CUSTOM'" />
+
+  <button (click)="trackMeal(customFood.value)"
+        class="track-btn"
+        type="button">
+    Track
+  </button>
+  
+  <div class="status"
+      [ngClass]="{'show': showSuccess}">
+    <span class="success-icon">&#x2713;</span> Meal Tracked
+    <div class="reminder">
+      Remember, stop before nightfall.
+    </div>
+    <a [routerLink]="['/home']"
+        class="status-link">
+      Onward
+    </a> 
+  </div>
+</div>

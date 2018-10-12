@@ -1,0 +1,26 @@
+<DockLayout>
+    <Button text="Track"
+        class="track-btn"
+        dock="bottom"
+        (tap)="trackMealTNS(customFood.text)"></Button>
+    <StackLayout class="p-20"
+            dock="top">
+        <Label [text]="mealName" 
+                class="h1" 
+                textWrap="true"></Label>
+        <Label text="Track your meal"
+                class="instructions"
+                textWrap="true"></Label>
+        <ListPicker [items]="foodPickerList"
+                selectedIndex="0"
+                (selectedIndexChange)="selectFoodTNS($event)" 
+                class="p-15 picker"></ListPicker>
+        <TextField #customFood
+                [hint]="customPlaceholder" 
+                [editable]="selectedFood=='CUSTOM'"
+                secure="false"
+                returnKeyType="done"
+                autocorrect="false"
+                class="input input-border"></TextField>
+    </StackLayout>
+</DockLayout>

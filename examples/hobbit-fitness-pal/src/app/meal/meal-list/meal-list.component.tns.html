@@ -1,0 +1,7 @@
+<StackLayout  class="p-20">
+    <Button *ngFor="let meal of meals"
+        [text]="meal.name" 
+        [nsRouterLink]="['/meal-add/elevenses']" 
+        class="meal-box"
+        [ngClass]="{'tracked': meal.tracked}"></Button>
+</StackLayout>
