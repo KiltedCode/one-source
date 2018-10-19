@@ -16,7 +16,7 @@ export class TrackOverviewService {
     },
     {
       meal: 'Elevenses',
-      tracked: true
+      tracked: false
     },
     {
       meal: 'Luncheon',

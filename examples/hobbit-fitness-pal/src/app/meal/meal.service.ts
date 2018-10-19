@@ -34,7 +34,7 @@ export class MealService {
       {
         id: 'elevenses',
         name: 'Elevenses',
-        tracked: true
+        tracked: false
       },
       {
         id: 'luncheon',
