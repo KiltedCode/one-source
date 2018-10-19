@@ -295,6 +295,16 @@ ng g xplat --prefix=foo --platforms=web,nativescript
                         </ul>
                     </section>
 
+                    <section id="xplat-commands">
+                        <h2>Commands</h2>
+<pre><code class="shell" data-trim>
+ng g feature meal --platforms=web,nativescript
+ng g component meal-add --feature=meal --platforms=web,nativescript
+ng g component meal-list --feature=meal --platforms=web,nativescript
+ng g service food --feature=meal --platforms=web,nativescript
+</code></pre>
+                    </section>
+
                     <section id="xplat-dev-mode">
                         <h2>xplat Developer Mode</h2>
                         <p>Support for teams where not everyone wears all hats.</p>
