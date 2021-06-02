@@ -1,8 +1,0 @@
-<div class="meal-list">
-  <a *ngFor="let meal of meals"
-      [routerLink]="['/meal-add', meal.id]"
-      [ngClass]="{'tracked': meal.tracked}"
-      class="meal-box">
-      {{meal.name}}
-  </a>
-</div>
