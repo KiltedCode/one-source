@@ -1,0 +1,34 @@
+<form
+  *ngIf="!showMessage"
+  (ngSubmit)="captureImage()"
+  #mealForm="ngForm"
+  id="camera-block"
+>
+  <div class="input-row">
+    <label for="name">Meal: </label>
+    <input type="text" id="name" placeholder="Meal name" required [(ngModel)]="mealName" />
+  </div>
+  <video #video id="video" width="640" height="480" autoplay></video>
+  <button
+    id="snap"
+    type="submit"
+  >
+    Capture Meal
+  </button>
+  <canvas #canvas id="canvas" width="640" height="480"></canvas>
+</form>
+
+<div
+  *ngIf="showMessage"
+  class="status"
+>
+  <span class="success-icon">&#x2713;</span> Meal Tracked
+  <div class="reminder">
+    Remember, stop before nightfall.
+  </div>
+  <a [routerLink]="['/home']"
+      class="status-link">
+    Onward
+  </a>
+</div>
+

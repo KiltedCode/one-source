@@ -1,0 +1,27 @@
+<DockLayout>
+  <GridLayout dock="bottom" rows="auto" columns="*">
+      <Button text="+"
+          [nsRouterLink]="['/meal-add']"
+          class="add-link-btn"
+          horizontalAlignment="right"
+          height="45"
+          width="45"></Button>
+  </GridLayout>
+  <StackLayout  class="p-20 text-center"
+          dock="top"
+          stretchLastChild="true">
+    <hobbit-fitness-pal-header
+      title="HobbitFitnessPal"
+    ></hobbit-fitness-pal-header>
+    <Label text="Ensuring you don't miss any important meals of the day!"
+            class="h2 headline"
+            textWrap="true"></Label>
+    <WrapLayout orientation="horizontal" class="overview-preview">
+      <Label *ngFor="let ov of trackingOverview$ | async"
+                [ngClass]="{'tracked': ov.tracked}"
+                class="overview-box"
+                height="90"
+                width="90"></Label>
+    </WrapLayout>
+  </StackLayout>
+</DockLayout>

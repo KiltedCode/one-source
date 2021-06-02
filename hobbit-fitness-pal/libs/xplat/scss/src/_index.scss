@@ -1,0 +1,33 @@
+/**
+ * The following are shared across all platforms and apps
+ */
+
+// shared variables
+@import 'variables';
+
+// create/import other scss files or define as needed...
+
+body {
+  background-color: $background-main;
+  font-family: 'Open Sans', 'Gill Sans', sans-serif;
+  margin: 20px 25px;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Zilla Slab', serif;
+}
+
+.center {
+  text-align: center;
+}
+
+.headline {
+  font-size: 1.4em;
+  font-style: italic;
+  text-align: center;
+}
+
+.instructions {
+  font-size: 1.4em;
+  font-style: italic;
+}

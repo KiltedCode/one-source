@@ -1,0 +1,21 @@
+<hobbit-fitness-pal-header
+  title="HobbitFitnessPal"
+></hobbit-fitness-pal-header>
+
+<p class="headline">
+  Ensuring you don't miss any important meals of the day!
+</p>
+
+<div class="overview-preview">
+  <div *ngFor="let ov of trackingOverview$ | async"
+      [ngClass]="{'tracked': ov.tracked}"
+      class="overview-box"
+      [title]="ov.meal">
+  </div>
+</div>
+<a
+  routerLink="/meal-add"
+  class="add-link-btn"
+  >
+  +
+</a>

@@ -1,0 +1,13 @@
+<StackLayout
+  *ngIf="showForm"
+  class="p-20"
+>
+  <Label text="Meal:" class="text-center"></Label>
+  <TextField required hint="meal name" [(ngModel)]="mealName" class="p-20 text-center"></TextField>
+  <Button
+    class="m-20"
+    text="Capture Meal"
+    (tap)="captureImage()"
+    horizontalAlignment="right"
+  ></Button>
+</StackLayout>
