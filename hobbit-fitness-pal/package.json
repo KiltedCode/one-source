@@ -50,7 +50,7 @@
     "zone.js": "~0.11.1"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.1102.0",
+    "@angular-devkit/build-angular": "~15.2.7",
     "@angular-eslint/eslint-plugin": "~2.0.2",
     "@angular-eslint/eslint-plugin-template": "~2.0.2",
     "@angular-eslint/template-parser": "~2.0.2",
@@ -70,8 +70,8 @@
     "@nstudio/angular": "12.0.1",
     "@nstudio/nativescript": "12.0.1",
     "@nstudio/nativescript-angular": "12.0.1",
-    "@nstudio/web": "12.0.1",
-    "@nstudio/web-angular": "12.0.1",
+    "@nstudio/web": "15.0.3",
+    "@nstudio/web-angular": "15.0.3",
     "@nstudio/xplat": "^12.0.1",
     "@types/jest": "~26.0.0",
     "@types/node": "14.14.33",
